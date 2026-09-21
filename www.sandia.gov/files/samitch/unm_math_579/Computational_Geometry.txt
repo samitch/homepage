@@ -1,0 +1,161 @@
+                             ==================
+                             Course Description
+                             ================== 
+                   ALGORITHMIC GEOMETRY AND MESH GENERATION
+                           Math 579 Section 002
+              also offered as:
+                            ECE 595 Section 006
+                Time/Place: T-Th 18:30-19:45, Humanities 428
+
+                          Instructor: Scott Mitchell
+
+www.cs.sandia.gov/~samitch/unm_math_579
+
+                             ================== 
+ 
+This math graduate course will introduce students to algorithmic geometry (aka computational geometry) for mesh generation (triangulations with point insertions) and model reconstruction/description. The focus will be on general techniques and paradigms, along with the proofs of correctness and algorithmic complexity.
+
+ The course will attempt to be both self-contained and non-repetitious of Prof. Luan's Fall 2009 Computational Geometry CS 506 course. The course will start with fundamental concepts and techniques, focusing on those most relevant to the later topics of the course; some parts of the new field of computational topology will be introduced as it relates to mesh generation.  Theoretical open problems will be introduced throughout the course. Some anecdotes about the difference between mesh generation theory and practice will be described.
+                             ================== 
+
+ 
+Short bio:
+Scott A. Mitchell, Ph.D., is a Principal Member of Technical Staff in the Computation, Computers, Information & Mathematics Center at Sandia National Laboratories.  He received his Ph.D. in Applied Math from Cornell University in 1993.  From 1993 to 2002 Scott researched and developed mesh generation algorithms. His work includes the theory of hexahedral mesh generation, a highly constrained problem. From 2002-2007 he managed a department on large-scale continuous optimization.  Today he works on mathematical techniques for understanding data-centric information problems, including computational topology.  Scott met his wife Carissa in a Geometry class in high school.
+http://www.cs.sandia.gov/~samitch/ [www.cs.sandia.gov]
+ 
+                             ================== 
+                                    Book:
+                             ================== 
+Algorithmic Geometry
+J-D. Boissonnat and M. Yvinec
+1998 (English translation of 1995 book Geometrie Algorithmique)
+http://www.amazon.com/Algorithmic-Geometry-Jean-Daniel-Boissonnat/dp/0521565294/ref=pd_sim_b_3 [www.amazon.com]
+
+                             ================== 
+                           Applications of methods:
+                             ================== 
+Mesh generation is the process of decomposing a domain into geometrically well-shaped (but non-identical) and combinatorially identical regions, such as triangles and quadrilaterals. Triangulations and other hierarchical-combinatorial-representations of geometric objects have wide applicability. Most numerical techniques for solving differential equations over arbitrary domains require mesh generation of the domainas a preprocess.  The quality of the numerical solution depends on the geometric qualities and alignment of the decomposition. Reconstructing models from point data often relies on computational geometry. Examples include solid model reconstruction from scanned images, and understanding spaces of molecular conformations from sampled points: and in general reconstructing any space from point-samples. Triangulations are also fundamental to computer graphics rendering. Computational geometry plays a large role in visual analytics, such as graph layout algorithms, reconstructing contour lines on electronic topographic maps, to understanding the output of numerical solutions to turbulent mixing and combustion models.  Computational geometry plays an important role in understanding feasible regions in optimization, especially in linear programming.
+
+Computational geometry careers are wide ranging and include decomposition and analysis of geometric domains for manufactured object design (pretty much everything that is functional e.g. airplanes, tires, dental implants), and natural object analysis (e.g. seismic, oil exploration, groundwater); computer graphics and visualization; clothing manufacture (laying out patterns on fabric); sensor networks and geographic information systems; satellite and camera imagery; computational biology including genomics and molecular conformations.
+
+Computational geometry is related to the mathematical fields of geometry, linear algebra, and algebraic topology.  Computational geometry is related to the CS fields of optimization, complexity theory, datastructures. Computational geometry has an active academic and industrial research community. The 26th Symposium on Computational Geometry and the 18th International Meshing Roundtable were held last year.
+
+                             ================== 
+                 Background on the character of computational geometry:
+                             ================== 
+Most of computational geometry considers combinatorial algorithms and descriptions played out on objects embedded in two- and three-dimensional Euclidean geometric space. The goal of many of the techniques is to build a hierarchical combinatorial description, such as a simplicial complex, lattice, tree, etc.  Various types of duality such as point-line are common.  Mappings, such as conformal mapping, boundary maps, and geometric projections, are important to certain parts of the field. The character of problems range from combinatorial, geometric, algorithm complexity analysis, some elementary calculus and continuous optimization. Most of this can be understood from first principles.  Computational topology also adds some algebra; prior knowledge of algebraic topology is not required for this class. The combinatorial explosion of possible special cases is a thorn to both theory and practice, and people in the field spend a lot of time thinking of ways to generalize promising techniques (proofs and computations) that elegantly avoid having to deal with explicit special cases.
+
+The building blocks of computational geometry are elementary. No particular background beyond an interest in algorithms, knowledge of basic datastructures and algorithm complexity analysis, and high-school geometry and vectors are required.
+ 
+                             ================== 
+                             Student activities:
+                             ================== 
+* Students interested in software will be encouraged to experiment with developing some of their own small-scale software, and experiment with the various community geometric libraries and codes that exist. Matlab is sufficient for experimenting on your own. C and C++ are helpful for exploring the communities libraries and codes (e.g. CGAL, Triangle).
+
+* Students interested in theorem proving will have ample problems to ponder; the character of these problems range from combinatorial, geometric, algorithm complexity analysis, and some calculus. Mesh generation heuristics are often developed before provable techniques, so attempting to understand and describe heuristics and observations is often illuminating and sometimes not too hard.
+
+* Students may also present a research paper from the literature in class.
+
+                             ================== 
+                            Book/detail on topics
+                             ================== 
+The book "Algorithmic Geometry" is a standard first textbook, and is a more mathematical introduction to the topic than the more commonly used "Computational Geometry" book (also a good reference):
+
+The course will likely cover the following chapters of the "Algorithmic Geometry" book:
+1 - notions of complexity
+2 - basic data structures
+3 - deterministic methods used in geometry
+7-10 some short form of polytopes, convex hulls, and linear programming
+14 - Arrangements of hyperplanes
+11 - Complexes
+12-13 - Triangulations
+17- Voronoi diagrams
+
+And the following *not* from book
+Mesh generation
+- families of mesh generation: 
+    constrained and conforming meshing
+    structured meshing, block-structured meshing and templates, unstructured meshing, 2.5d meshing
+- Delaunay based mesh generation in 2d and 3d
+- quadrilateral mesh generation
+- hexahedral mesh generation and arrangements of surfaces
+
+Meshing and solid models
+
+Topological Invariants
+
+Mesh improvement
+- mesh refinement
+- mesh coarsening
+- combinatorial optimization of mesh structure
+- continuous optimization of mesh points  
+
+                             ================== 
+                                 Software
+                             ================== 
+
+CGAL - Computational Geometry Algorithms Library - huge European effort
+http://www.cgal.org/
+
+Shewchuck's Triangle
+http://www.cs.cmu.edu/~quake/triangle.html
+
+Mitchell's demo meshers
+http://www.cs.sandia.gov/~samitch/csstuff/csguide.html
+
+Vavasis's QMG project 
+http://www.cs.cornell.edu/home/vavasis/qmg-home.html
+
+Meshing Research Corner
+http://www.andrew.cmu.edu/user/sowen/mesh.html
+
+For C++ aficionados
+Boost Graph Library (BGL)
+CGAL interfaces to it / uses it.
+www.boost.org, search for "graph library" internally
+complicated, templated, generic, flexible - some love it...
+
+C++ STL standard template library
+
+Cubit, Sandia's mesh generation toolkit,
+Request the educational version; it's free, but no source code is available
+unless you form a research partnership with them.
+
+                             ================== 
+                            Main CG conferences:
+                             ================== 
+Symposium on Computational Geometry, 
+Canadian Conference on Computational Geometry, 
+European Workshop on Computational Geometry
+http://www.computational-geometry.org/
+
+http://www.sci.utah.edu/socg2010/
+http://portal.acm.org/browse_dl.cfm?coll=ACM&dl=ACM&idx=SERIES361&linked=1&part=series
+
+Also 
+Fall Workshop on Computational Geometry
+
+                             ================== 
+                           Interesting web sites
+                             ================== 
+
+O'Rourkes open problems 
+http://maven.smith.edu/~orourke/TOPP/
+
+Eppstein's Geometry Junkyard (math)
+http://www.ics.uci.edu/~eppstein/junkyard/index.html
+
+Eppstein's Geometry In Action (applications) 
+http://www.ics.uci.edu/~eppstein/geom.html
+
+Tamal Dey's Volume and Surface Meshing
+http://www.cse.ohio-state.edu/~tamaldey/mesh.htm
+
+Jonathan Shewchuck
+http://www.cs.cmu.edu/~jrs/
+
+Scott Mitchell's cubit-meshing pages - old
+http://www.cs.sandia.gov/~samitch/cubit-samitch.html 
+
+Meshing Research Corner
+http://www.andrew.cmu.edu/user/sowen/mesh.html

@@ -1,0 +1,6 @@
+The following sentence in the paper is erroneous: 
+``We utilize the VoroCrust method for surface reconstruction using Voronoi cells (Mahmoud et al., 2015).''
+That was the intention at the time of the first draft, but it was never done.
+Instead we created a new advancing-front surface reconstruction algorithm based on the particular form of this data, then used Cubit to create coarser triangular meshes of these surfaces, and volumetric tetrahedral meshes of the inter-surface spaces.
+[CUBIT Toolkit, cubit.sandia.gov]
+

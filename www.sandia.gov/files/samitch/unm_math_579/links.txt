@@ -1,0 +1,60 @@
+Software
+
+CGAL - Computational Geometry Algorithms Library - huge European effort
+http://www.cgal.org/
+
+Shewchuk's Triangle
+http://www.cs.cmu.edu/~quake/triangle.html
+
+Mitchell's Computational Geometry Pages, including demo meshers 
+https://www.sandia.gov/-samitch/scott-a-mitchell/publications/computational-geometry-papers/
+
+Vavasis's QMG project 
+http://www.cs.cornell.edu/home/vavasis/qmg-home.html
+
+For C++ aficionados
+Boost Graph Library (BGL)
+CGAL interfaces to it / uses it.
+www.boost.org, search for "graph library" internally
+complicated, templated, generic, flexible - some love it...
+
+C++ STL standard template library
+
+Cubit, Sandia's mesh generation toolkit,
+http://cubit.sandia.gov/
+Request the educational version; it's free, but no source code is available
+unless you form a research partnership with them.
+
+---
+
+Meshing Research Corner
+http://www.andrew.cmu.edu/user/sowen/mesh.html
+
+Main CG conferences:
+Symposium on Computational Geometry, Canadian Conference on Computational Geometry, European Workshop on Computational Geometry
+http://www.computational-geometry.org/
+
+http://www.sci.utah.edu/socg2010/
+http://portal.acm.org/browse_dl.cfm?coll=ACM&dl=ACM&idx=SERIES361&linked=1&part=series
+
+---
+
+Interesting web sites
+
+O'Rourkes open problems 
+http://maven.smith.edu/~orourke/TOPP/
+
+Eppstein's Geometry Junkyard (math)
+http://www.ics.uci.edu/~eppstein/junkyard/index.html
+
+Eppstein's Geometry In Action (applications) 
+http://www.ics.uci.edu/~eppstein/geom.html
+
+Tamal Dey's Volume and Surface Meshing
+http://www.cse.ohio-state.edu/~tamaldey/mesh.htm
+
+Jonathan Shewchuk
+http://www.cs.cmu.edu/~jrs/
+
+Scott Mitchell's cubit-related meshing papers 
+https://www.sandia.gov/-samitch/scott-a-mitchell/publications/meshing-papers/

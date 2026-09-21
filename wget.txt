@@ -1,0 +1,10 @@
+wget.exe `
+  --mirror `
+  --adjust-extension `
+  --convert-links `
+  --page-requisites `
+  --domains=www.sandia.gov `
+  --include-directories="/-samitch/staff/scott-a-mitchell,/-samitch/scott-a-mitchell,/app/uploads/sites/126,/files/samitch" `
+  https://www.sandia.gov/-samitch/staff/scott-a-mitchell/ `
+  https://www.sandia.gov/-samitch/scott-a-mitchell/ `
+  https://www.sandia.gov/files/samitch/

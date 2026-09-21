@@ -1,0 +1,159 @@
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf460
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww8460\viewh11100\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 1. Theory\
+\
+a.i\
+How does the complexity change if you require the quadtree (from last week)\
+ to be "balance",\
+no square is adjacent (diagonal) to a square more that twice as big?\
+\
+a.ii\
+Fix the quadtree algorithm so the number of quadrilaterals doesn't depend on the geometric placement of the points.\
+Hint: use a "skip" - quadtree, where long chains of empty quadrilaterals are represented implicitly and there is a pointer that skips levels.\
+Describe when you would skip levels.\
+Describe what the output complexity is now.\
+\
+b. Compute the storage space and run-time for a mesh using different models.\
+\
+For all models, we use the tetrahedra, as defined by figure one_tet from the web page.  These exist in a simplicial complex, a graph layered by dimension.\
+There are choices about which edges and paths in the graph to represent implicitly and which to represent explicitly. This exercise explores those choices.\
+\
+In the complex,\
+assume that each vertex has 27 tetrahedra and that every edge has 6 tetrahedra. (Aside, these numbers are about the average encountered in practice, and match the "kissing number"  which describes the number of unit balls that can be tangent to one another in different dimensions. )\
+\
+The main datastructure will be a list that represents a set of simplices.\
+\
+For a list of one-dimensional lower simplices, there is also a "sign" that determines natural orientation of the subsimplex with respect to the natural orientation of the simplex. (sign is orientation +/-, plus sometimes a rotation)\
+For a list of one-dimensional lower simplices, these are kept in a canonical order. \
+Together these speed up getting subsimplices of two or more lower dimensions. For example, getting the vertices of a triangle in the one-layer model B (and C) below requires getting the three oriented edges, then the head of each edge provides one unique vertex, without needing to perform any list intersections.\
+\
+Assume that all up-dimension and any other lists of simplices are kept in some sorted order (say there is a total order based on the coordintes, or based on a global id). This helps speed up intersections and unions of lists.\
+\
+For simplicity let's assume that the cost of sorting is free. (lists are small).\
+\
+--\
+Consider 4 different models, A, B, C,D.\
+\
+A. All paths.\
+Each simplex points to every simplex of all dimensions that contains it, using a separate list of pointers for every layer.\
+Each simplex points to every simplex of all dimensions that it contains,  (which is about the average)in every layer.\
+\
+B. One-layer\
+Each simplex points to every simplex of one-dimension higher that contains it.\
+Each simplex has one list containing every simplex of one-dimension lower that it contains.\
+\
+C. Circle\
+Each vertex has one list of the tetrahedra that contain it.\
+Each simplex has one list containing every simplex of one-dimension lower that it contains.\
+\
+D. Implicit\
+Each vertex has one list of the tetrahedra that contain it.\
+Each tetrahedron has a list of the 4 vertices it contains, \
+and moreover the 4 vertices are listed in a cannonical ordering. \
+Implicit simplices can be created "on the fly" from the list of vertices.\
+This allows each triangles of the tetrahedra to be created in time 3,\
+and each edges to be created in time 2. \
+I.e. "Return the two ordered vertices\
+of edge # 2 of this tetrahedra" takes time 2. \
+\
+\
+--\
+Run-time primitive operations and their costs: \
+\
+Fetch: \
+Given a pointer to a simplex, bring the simplex into memory (this is needed before you can access any of its pointers. Cost is constant k_fetch.\
+\
+List_copy: \
+create a copy of a list or create one from scratch. Cost is m.\
+\
+List_bin_op: \
+Find the intersection or union of two lists. cost m+n, where m and n are the lengths of the two lists.\
+\
+List_op: remove or insert one item from a list. cost is m, where m is the current length of the list. (i.e. this is a list_bin_op with a list of length 1.)\
+Deleting an entire list is just cost 1, however.\
+\
+Create an explicit simplex of dimension d with d+1 vertices. \
+Cost is s+d, s is a constant.\
+\
+-\
+Models A, B, C:\
+Given a simplex of dimension Da, return a list of the sub-simplices of dimension Db.\
+\
+For Da=3,  \
+  for Db = 2 cost is 4, \
+  for Db = 1 cost is 4*k_fetch + 6 (get the first oriented triangle, then get the three edges from it. Get the second, third and fourth oriented triangles, then get the first edge from each one. ) \
+ for Db = 0 cost is 7*k+fetch + 4.\
+ (  = 2*k_fetch + 3*k_fetch + 3 to get the 3 vertices of the first oriented triangle, plus 1*k_fetch + 1 *k_fetch +1 to get the first vertex of the first edge of the other three triangles. )\
+For Da=2, for Db = 1 cost is 3 and for Db = 0 cost is 3*k_fetch + 3\
+For Da=1, cost is 2\
+(Can you see that this follows from the above and the model description below?)\
+\
+Model D below:\
+Given a tetrahedra, return the sub-simplices of dimension Db.\
+cost is 4*(s+2) for Db = 2\
+cost is 6*(s+1) for Db = 1\
+cost is 4*(s) for Db = 0\
+(Can you see that this follows from the above and the model description below?)\
+\
+--\
+Storage costs are:\
+s to store a simplex of any dimension. i.e. overhead. s is constant.\
+\
+k1_list_fixed + k2_list_fixed * n to store a list of pointers to n simplices, where n can be determined ahead of time. I.e. all the down-dimension lists in the complex such as the list of vertices for a single tetrahedra, together with one up-dimension list: 2 tetrahedra per triangle. k_list_fixed is a constant.\
+\
+k1_list_variable +  k2_list_fixed * n to store a list of pointers to n simplices, where n cannot be determined ahead of time. k_list_variable is constant.\
+\
+The storage costs for the coordinates of the points are invariant so we won't worry about those.\
+\
+--\
+OK now finally the questions!\
+\
+1bi. Find the space required to store a tetrahedral mesh of n tetrahedra.\
+\
+Find the run-time required to perform the following operations. Ensure you don't return duplicates, i.e. if there are 4 vertices, return each one just once.\
+1bii. Given a tetrahedra, return the 4 vertices it contains.\
+1biii. Given a tetrahedra, find the 4 tetrahedra that intersect in a triangle with it.\
+1biv. Given a vertex, find all the triangles containing it.\
+1bv. Given a vertex v, find all the vertices contained in a tetrahedra that has a non-empty intersection with any tetrahedra containing v. \
+1bvi. Given a tetrahedra, create a vertex at its geometric center, then remove the tetrahedra and replace it with four: each tet is one of the original triangles together with the new center vertex. \
+---\
+1c.\
+Do the same as 1b for a hexahedral mesh, as defined by figure one_hex from the web page. Assume that each vertex has 8 hexahedra and that every edge has 4 hexahedra (which if I recall is slightly below the average).\
+\
+1bi. Find the space required to store a tetrahedral mesh of n tetrahedra.\
+\
+Find the run-time required to perform the following operations. Ensure you don't return duplicates, i.e. if there are 8 vertices, return each one just once.\
+1bii+. What's the best time you can come up with to return the subsimplices of dimension Db in models ABC, and in model D?\
+\
+1bii. Given a hexahedra, return the 8 vertices it contains.\
+1biii. Given a hexahedra, find the 6 hexahedra that intersect in a quad with it.\
+1biv. Given a vertex, find all the quads containing it.\
+1bv. Given a vertex v, find all the vertices contained in a hexahedra that has a non-empty intersection with any hexahedra containing v. \
+1bvi. Given a hexahedra, create a small hexahedra near its geometric center, then remove the original hexahedra and replace it with six: each new hex is one of the original quads, together with a quad of the new center hex. \
+\
+2. Practice\
+\
+a.\
+Extend your program to represent the following structures:\
+triangles\
+circles\
+infinite lines\
+half-spaces\
+\
+b.\
+Get your base program to work in 1d, 2d, and 3d,\
+\
+Hint: although dimensional independent representations are fairly straight-forward, primitives are not.\
+\
+c. Implement 1a, the balancing procedure for quadtrees.\
+Hint: you'll need a procedure for finding the geometric-neighbors of a square, including those that don't share the same parent and are far apart in the tree.\
+\
+d. Use your quadree to support answering "report points inside an axis-aligned rectange" for a query rectangle.\
+(What's the running time of your queries?)\
+\
+e. Use your quadtree to support answering "nearest-neighbor" of a query point.\
+(What's your running time?)}

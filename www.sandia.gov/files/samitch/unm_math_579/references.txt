@@ -1,0 +1,70 @@
+Book list
+
+1.
+Algorithmic Geometry
+J-D. Boissonnat and M. Yvinec
+1998 (English translation of 1995 book Geometrie Algorithmique)
+http://www.amazon.com/Algorithmic-Geometry-Jean-Daniel-Boissonnat/dp/0521565294/ref=pd_sim_b_3
+- more detailed and mathematical than 2.
+
+2.
+Computational Geometry: Algorithms and Applications, Second Edition (Hardcover)
+Mark de Berg (Author), M. van Krefeld (Author), M. Overmars (Author), O. Schwarzkopf (Author) 
+2008 3rd edition
+http://www.amazon.com/exec/obidos/ASIN/3540656200/asmctommy-20
+Comments:
+- most common CG textbook
+- Shuang (Sean) Luan used it for the 2007 and 2009 CS UNM comp. geom. classes
+- Joe Mitchell at SUNY Stonybrook used this in spring 2010 for his graduate level class
+
+3.
+Computational Geometry: An Introduction (Monographs in Computer Science) (Hardcover)
+Franco P. Preparata and Michael Ian Shamos
+1985
+- classic, we used it when Scott took the class in 1990, and it is still being used in courses today
+- expensive, >$100
+
+4.
+Computational Geometry in C (Cambridge Tracts in Theoretical Computer Science) (Paperback)
+Joseph O'Rourke (2000)
+- The author uses it for an undergrad CG class.
+- Focus on computing and source code
+- The author is a very good teacher
+- popular, several reprints and editions
+
+5.
+Geometry and Topology for Mesh Generation (Cambridge Monographs on Applied and Computational Mathematics) (Paperback)
+Herbert Edelsbrunner 
+2006
+- includes topology
+
+6. 
+Topology for Computing
+Afra Zomorodian 
+2005
+- complexes, a generalization of the idea of triangulations
+- less geometric than computational geometry
+- less algebraic and more applied and geometric than typical algebraic topology courses
+- Afra spent 10 weeks with Scott in spring 2010
+
+6.
+http://compgeom.cs.uiuc.edu/~jeffe/compgeom/books.html
+- web site compendium of books - hasn't been updated in a long time
+
+
+======================
+Related topics
+
+geometry
+linear algebra
+algebraic topology
+graph theory
+
+
+=========================
+Software
+  CGAL, boost, qhull, scotts matlab triangulation, vavasis qmg
+
+http://www.andrew.cmu.edu/user/sowen/mesh.html
+
+

@@ -1,0 +1,81 @@
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf460
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww12640\viewh12360\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 hw01\
+(home work week 01)\
+\
+Due 30 Aug 2010\
+\
+Text: study pages from the beginning of the book to page 30.\
+\
+See the ../Computational_Geometry.txt file on this website.\
+\
+1. Theory\
+a. \
+Visit all the web sites in the "Interesting web sites" section of Computational_Geometry.txt\
+Find three open theory problem that appeals to you.\
+Describe the problems and why they are interesting to you.\
+Bring your favorite to class on Tuesday Aug 30th and share it with the class.\
+\
+b. \
+As you walk around, practice building a mental model of the objects you see.\
+Hint: man-made objects are easier. \
+\
+c. \
+What's the run-time and output space complexity of the quadtree algorithm that\
+takes as input points in the unit square in R^2 and divides the square into four sub-squares\
+recursively until no two points are in the same square? \
+(output is the quadtree, and which point each square contains, if any).\
+Express the output space complexity in terms of both the maximum depth of the tree and the number of \
+quadrilaterals.\
+Express it in terms of the smallest distance between input points, and the number of input points.\
+Express both best case and worst case complexity. \
+\
+1c.i Bonus\
+Express the output complexity of each level of the tree.\
+\
+1c.ii Bonus\
+<only for the extremely ambitious statistics student - this is very hard, perhaps an open problem>\
+Suppose the input is n points uniformly distributed in the unit square.\
+What's the expected size and depth of the tree?\
+<There are quite a few papers in the statistics literature about characterizing the\
+distribution of distances under this model. \
+Perhaps a tracktable variant of this problem would be to assume that\
+the distribution of distances for any one point is a triangle distribution with peak\
+at 1/4 and 0 at 0 and 0 at 1/2. Even then this problem may be very hard>\
+\
+2. Practice\
+a\
+Explore the available libraries that might help you. (see "Software" section of Computational_Geometry.txt)\
+\
+b\
+Decide what programming language you will use for the class. \
+\
+c\
+Write a program that does the following:\
+input points \
+input line segments\
+stores those objects\
+\
+Hint: points should contain a list of coordinates\
+Hint: line segments should reference the points, and not be copies of the point coordinates\
+\
+Turn in source code and a picture of an input set.\
+\
+2c.i Bonus\
+Allow it to work in 1 dimension (i.e. 1d, R^1),\
+also 2d, and 3d\
+(Mostly we will work in 2d and some 3d).\
+\
+2c.ii Bonus\
+Allow for representing multiple point, edge sets \
+\
+2d\
+Using your program from (c) above as a base,\
+Implement the quadtree algorithm in 1c for 2-dimensions\
+In matlab, representing a tree might be best using the array representation.\
+\
+}

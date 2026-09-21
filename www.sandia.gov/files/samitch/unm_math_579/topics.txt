@@ -1,0 +1,82 @@
+
+non-degeneracy assumptions
+simulation of simplicity
+templates - special case enumeration
+
+algorithm complexity
+data size complexity
+
+Definitions of structures:
+  complexes (many types)
+  simplex definition
+  
+Divide and conquer
+Plane sweep
+Data representation
+  implicit vs. explicit structures
+Steiner vs. non-steiner problems
+
+Spaces
+  convex
+  affine
+  projective
+
+Point location
+  octree
+  stabbing
+
+background mesh
+
+Delaunay triangulation
+  empty circles
+  convex hulls to triangulation in lower dimension
+  constrained
+  dimensions > 2
+  slivers
+Structured meshing
+  pknupp textbook
+  conformal mapping
+Circle packing approaches - scott's paper, more recent results
+Meshing based on DT
+  constrained
+  point insertion strategies
+Meshing based on quadtree, octrees
+Feature size, fat triangles, number of triangle - for given quality proofs
+  rate of mesh size increase for bounded aspect ratio
+Scott's matlab 2d code
+Vavasis general dimension code
+Shewchuck's Triangle code
+Labelle thesis
+
+Mesh improvement
+  optimization (pknupp, convex objective fns, smoothing order)
+  discrete changes
+    Staten swaps
+
+Element quality and solver performance ties
+
+Quadrilateral meshes
+Hexahedral meshes
+  structural duality - arrangement of surfaces
+  Block-structured meshes
+  Schneiders templates
+  Existence proof
+  Whisker weaving
+  "history" of hex mesh generation - ontology, w/ modern updates
+
+Refinement
+  Rivara refinement - see if open problems related to similarity classes, for various types
+  Pillowing
+  coarsening
+
+incremental - adding points one at a time
+
+Invariants
+  Euler characteristic
+  simplicial homology construction - play w/ JPlex
+  Morse theory?
+
+Constrained to solid modeling engine - query points only
+  sufficiency of 
+
+

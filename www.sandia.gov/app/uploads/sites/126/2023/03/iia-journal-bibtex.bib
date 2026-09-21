@@ -1,0 +1,13 @@
+@article{MITCHELL2023103485,
+title = {Incremental Interval Assignment by Integer Linear Algebra with Improvements},
+journal = {Computer-Aided Design},
+volume = {158},
+pages = {103485},
+year = {2023},
+issn = {0010-4485},
+doi = {https://doi.org/10.1016/j.cad.2023.103485},
+url = {https://www.sciencedirect.com/science/article/pii/S0010448523000179},
+author = {Scott A. Mitchell},
+keywords = {Mesh generation, Intervals, Integer, Optimization, Linear algebra},
+abstract = {Interval Assignment (IA) is the problem of selecting the number of mesh edges (intervals) for each curve for conforming quad and hex meshing. The intervals x is fundamentally integer-valued. Many other approaches perform numerical optimization then convert a floating-point solution into an integer solution, which is slow and error prone. We avoid such steps: we start integer, and stay integer. Incremental Interval Assignment (IIA) uses integer linear algebra (Hermite normal form) to find an initial solution to the meshing constraints, satisfying the integer matrix equation Ax=b. Solving for reduced row echelon form provides integer vectors spanning the nullspace of A. We add vectors from the nullspace to improve the initial solution, maintaining Ax=b. Heuristics find good integer linear combinations of nullspace vectors that provide strict improvement towards variable bounds or goals. IIA always produces an integer solution if one exists. In practice we usually achieve solutions close to the user goals, but there is no guarantee that the solution is optimal, nor even satisfies variable bounds, e.g. has positive intervals. We describe several algorithmic changes since first publication that tend to improve the final solution. The software is freely available.}
+}

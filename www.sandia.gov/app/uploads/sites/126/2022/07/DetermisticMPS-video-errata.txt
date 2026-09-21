@@ -1,0 +1,9 @@
+DetermisticMPS video errata
+
+There's a few things I wish I had said differently in the video.
+
+It's a *conjecture* that O( n M(b) log b ) is the best possible runtime for any serial algorithm. The n M(b) factors are required for computing the distance between a sample and neighbor, for example. The log b factor arises from computing a trig function. I don't have a proof that computing a trig function is requires, so perhaps someone could somehow shave off the log b factor, but I doubt it. The log b does not arise from Newton's method. You can compute A, A^{-1}, tan, arctan, to b bits of precision in a constant times the time required to compute tangent, which is O( M(b) log b).
+
+Open problems, can you prove that throwing a number of darts (the number being proportional to the number of squares) into squares, a constant fraction of them are accepted? The thing we are lacking is a statement about the expected distribution of the faction of each square covered by a disk. That is, we'd like to show that if a square is partially covered, we expect it to be 1/2 covered on average, not almost completely covered. 
+
+For sampling from a vector field, the Lipschitz constants for how quickly the sizing function varies affects the number of neighbors was worked out by Alex Rand in our paper "Variable Radii Poisson-disk Sampling," which is referenced in the paper. That paper also shows an alternatives to Poisson-disk sampling, two-radii sampling, that generates something closer to true blue noise than Poisson-disk sampling. It predates Heck's paper on step blue noise.

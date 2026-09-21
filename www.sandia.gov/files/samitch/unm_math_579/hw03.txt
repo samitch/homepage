@@ -1,0 +1,27 @@
+hw03
+
+Duality
+
+Recall that in class and in the book we defined the dual * of point A to be the hyperplane defined by A* = {X : X \dot A = 1}. In the duality_notes.jpg and other contexts the definition A* = {X : X \dot A = -1} is sometimes used.
+
+HW 
+Pick some of the following problems and show how they can be solved using the duality.
+P1 and P6 are described to some degree on page three of the notes pictures. The notes have a few pictures that might help. I am sorry the notes are so faint.
+
+P1. Angular sorting in R^2. given n points {p \in P}, for each point p compute the order of all other points P \ p sorted by angle around p.
+
+P2. <skip>
+
+P3. Weighted median line. Given a point set P and scalar weights on each point, compute the line such that minimizes the sum of the weighted lengths of the distances from the points to the line, each length weighted by the weight of the point.
+
+P4. Half-space range query. Given a point set P, preprocess so that for any query half-space, you can report how many of the points lie in the half-space in O(log(n)) time.  Report the actual points in O(k + log n) time.
+
+P5. Nearest neighbor search for lines in R^2. Given a point set P, preprocess so that for any query line you can report which of the points in P is closest to it.
+
+P6. Given point set P of size n, find the triangle with vertices from P with smallest area, in time O(n^2)
+
+P7. Given point set P, enumerate all the empty double-wedges: pairs of lines through two of the points of P but with no points p inside one of the quadrants and its opposite. A quadrant is the space to the right or left of one of the lines and to right or left of the other line. 
+
+Recall a wedge is the dual of line segment.
+
+P8. Stabbing line segments. Given line segments by endpoints P and Q, preprocess to efficiently answer which line segments are pierced by any given query line (infinite, not a segment).
